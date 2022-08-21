@@ -15,11 +15,10 @@ Including another URLconf
 """
 from unittest.mock import patch
 from django.contrib import admin
-from django.urls import path
-from site_core.views import HomeView
-
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', HomeView.as_view(), name='home'),
+    path('site_core/', include('site_core.urls')),
+    path('accounts/', include('django.contrib.auth.urls'))
 ]

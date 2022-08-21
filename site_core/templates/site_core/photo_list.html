@@ -1,0 +1,8 @@
+<h1>List of sended Photos (ListView)</h1>
+<ul>
+    {% for photo in photo_list %}
+        <li>
+            <a href="#">RENOWATION: {{photo.renovation}} COLORING: {{photo.coloring}} DESCRIPTION: {{photo.description}}</a><br>
+        </li>
+    {% endfor %}
+</ul>
