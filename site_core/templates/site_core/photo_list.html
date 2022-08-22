@@ -2,7 +2,7 @@
 <ul>
     {% for photo in photo_list %}
         <li>
-            <a href="#">RENOWATION: {{photo.renovation}} COLORING: {{photo.coloring}} DESCRIPTION: {{photo.description}}</a><br>
+            <a href="/site_core/photo_detail/{{photo.id}}">RENOWATION: {{photo.renovation}} COLORING: {{photo.coloring}} DESCRIPTION: {{photo.description}}   <img src="{{photo.photo}}"  ></a><br>
         </li>
     {% endfor %}
 </ul>
