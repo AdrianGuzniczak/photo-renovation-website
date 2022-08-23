@@ -6,6 +6,7 @@ from site_core.models import Photo
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
+from django.conf import settings
 
 # Create your views here.
 class HomeView(TemplateView):
@@ -14,16 +15,19 @@ class HomeView(TemplateView):
 class PhotoCreateView(LoginRequiredMixin, CreateView):
     model = Photo
     fields = '__all__'
+    exc
+
     success_url = reverse_lazy('site_core:list_photo')
 
 class PhotoListView(LoginRequiredMixin, ListView):
     model = Photo
     context_object_name = 'photo_list'
+    template_name = 'site_core/photo_list.html'
     paginate_by = 5
 
     def get_queryset(self):
-        print('>>>>>>>>>>>>>>>>>>{}'.format(self.request.user))
-        return Photo.objects.filter(user = self.request.user)
+        return Photo.objects.filter(owner=self.request.user)
+        
 
 class PhotoDetailView(DetailView):
     model = Photo

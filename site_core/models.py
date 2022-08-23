@@ -1,18 +1,26 @@
+from contextlib import nullcontext
+from tkinter import CASCADE
 from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
+from django.http import HttpResponse
 
 # Create your models here.
 class Photo(models.Model):
+
+    def get_user_id(request):
+        current_user = request.user
+        return current_user.id
+
     renovation = models.BooleanField(default=False)
     coloring = models.BooleanField(default=False)
     description = models.CharField(max_length=150, default=None)
     photo = models.ImageField(upload_to='media/photos')
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, editable=False)
+    # user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, editable=False)
+    owner = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
 
-    # user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, editable=False)
-    print('<<<<<<<<<<<<<<<<<<<<  {}'.format(user))
-    
+    class Meta:
+        ordering = ['description']
 
     def __str__(self):
-        return f"Photo submitted for restoration."
+        return f"Renpvation {self.renovation}, {self.description}"
