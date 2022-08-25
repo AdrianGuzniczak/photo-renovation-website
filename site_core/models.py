@@ -16,11 +16,13 @@ class Photo(models.Model):
     coloring = models.BooleanField(default=False)
     description = models.CharField(max_length=150, default=None)
     photo = models.ImageField(upload_to='media/photos')
-    # user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, editable=False)
     owner = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
 
-    class Meta:
-        ordering = ['description']
-
     def __str__(self):
-        return f"Renpvation {self.renovation}, {self.description}"
+        return f"{self.description}"
+
+class Contact(models.Model):
+    
+    email = models.EmailField()
+    subject = models.CharField(max_length=255)
+    message = models.TextField()

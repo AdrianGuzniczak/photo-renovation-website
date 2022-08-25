@@ -1,8 +1,26 @@
-<h1>List of sended Photos (ListView)</h1>
-<ul>
-    {% for photo in photo_list %}
-        <li>
-            <p>{{photo}}</p>
-        </li>
-    {% endfor %}
-</ul>
+{% extends 'base.html' %}
+
+{% block my_header %}
+{% endblock %}
+
+{% block content %}
+
+
+<section id="contact">
+  <article>
+
+    <h2>List of sended Photos</h2>
+    <ul>
+        {% for photo in photo_list %}
+            <li>
+                <p>{{photo}}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+  </article>
+</section>
+
+{% endblock %}
+
+

@@ -10,46 +10,50 @@
 </head>
 <body>
 
-  <header>
-      <article>
-        <h2 id = 'header_font'>Photo renovation website</h2>
-      </article>
-  </header>
+{% block my_header %}
 
-  <nav>
-    <div class="navbar">
-      <div class="container nav-container">
-          <input class="checkbox" type="checkbox" name="" id="" />
-          <div class="hamburger-lines">
-            <span class="line line1"></span>
-            <span class="line line2"></span>
-            <span class="line line3"></span>
-          </div>  
-        <div class="logo">
-          <h1>Navbar</h1>
-        </div>
-        <div class="menu-items">
-          <li><a href="#">Home</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#">Manual restoration</a></li>
-          <li><a href="#">AI restoration</a></li>
-          <li><a href="#contact">Contact</a></li>
-          {% if user.is_authenticated %}
-            <li><a href="{% url 'logout' %}?next={{request.path}}">Sign out, <strong>{{user.username}}</strong></a></li>
-          {% else %}
-            <li><a href="{% url 'login' %}?next={{request.path}}">Sign in</a></li>
-            <li><a href="{% url 'site_core:signup' %}?next={{request.path}}">Sign up</a></li>
-          {% endif %}
-        </div>
+<header class='header'>
+    <article>
+      <h2 id = 'header_font'>Photo renovation website</h2>
+    </article>
+</header>
+
+{% endblock %}
+
+<nav>
+  <div class="navbar">
+    <div class="container nav-container">
+        <input class="checkbox" type="checkbox" name="" id="" />
+        <div class="hamburger-lines">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+        </div>  
+      <div class="logo">
+        <h1>Navbar</h1>
+      </div>
+      <div class="menu-items">
+        <li><a href="{% url 'site_core:home' %}">Home</a></li>
+        <li><a href="{% url 'site_core:gallery' %}">Gallery</a></li>
+        <li><a href="{% url 'site_core:create_photo' %}">Photo reconstruction</a></li>
+        <li><a href="{% url 'site_core:list_photo' %}">My photos</a></li>
+        <li><a href="{% url 'site_core:contact_form' %}">Contact</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'logout' %}?next={{request.path}}">Sign out, <strong>{{user.username}}</strong></a></li>
+        {% else %}
+          <li><a href="{% url 'login' %}?next={{request.path}}">Sign in</a></li>
+          <li><a href="{% url 'site_core:signup' %}?next={{request.path}}">Sign up</a></li>
+        {% endif %}
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  {% block content %}{% endblock content %}
+{% block content %}{% endblock content %}
 
-  <footer>
-    <p>Copyright &copy; photo-renowation-website 2022</p>
-  </footer>
+<footer>
+  <p>Copyright &copy; photo-renowation-website 2022</p>
+</footer>
   
 
 </body>
