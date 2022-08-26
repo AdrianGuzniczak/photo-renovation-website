@@ -1,4 +1,15 @@
-{% if form.errors %}
+{% extends 'base.html' %}
+
+{% block my_header %}
+{% endblock %}
+
+{% block content %}
+
+
+<section id="contact">
+  <article>
+
+    {% if form.errors %}
     <p> Your username or password is incorrect.</p>
 {% endif %}
 
@@ -14,11 +25,18 @@
 <form method='post' action='{% url 'login' %}'>
 
     {% csrf_token %}
-    {{form.user.label_tag}}
-    {{form.username}}
-    {{form.password.label_tag}}
-    {{form.password}}
-    <input type="submit" value="login">
+    {{form.as_p}}
+    <input class='form_button' type="submit" value="login">
     <input type="hidden" name="{{next}}">
 
 </form>
+    
+
+  </article>
+</section>
+
+{% endblock %}
+
+
+
+

@@ -13,9 +13,13 @@
     <ul>
         {% for photo in photo_list %}
             <li>
-                <p>{{photo}}</p>
+                {{photo}} 
+                <img id='list_photo' src="{{photo.photo.url}}" alt="" srcset="">
+                <a href="/photo_delete/{{photo.id}}"><input class='form_button' type="submit" value="Delete"></a>
             </li>
+          </br>
         {% endfor %}
+        
     </ul>
 
   </article>

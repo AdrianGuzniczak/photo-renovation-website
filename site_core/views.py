@@ -1,13 +1,14 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.http import HttpResponse
-from django.views.generic import TemplateView, CreateView, ListView, DetailView
+from django.views.generic import TemplateView, CreateView, ListView, DetailView, DeleteView
 from site_core.models import Contact, Photo
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
 from django.conf import settings
 from . forms import ContactForm
+from django.shortcuts import get_object_or_404
 
 
 # Create your views here.
@@ -50,5 +51,8 @@ class ContactView(CreateView):
 
 def gallery(request):
      return render(request,"site_core/gallery.html")
-    
+
+class PhotoDeleteView(LoginRequiredMixin, DeleteView):
+    model = Photo
+    success_url = reverse_lazy('site_core:list_photo')
 

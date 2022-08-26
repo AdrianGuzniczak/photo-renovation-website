@@ -1,6 +1,27 @@
-<h1>Register New User Here</h1>
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Sign Up">
-</form>
+{% extends 'base.html' %}
+
+{% block my_header %}
+{% endblock %}
+
+{% block content %}
+
+
+<section id="contact">
+  <article>
+
+    <h1>Register New User Here</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class='form_button' type="submit" value="Sign Up">
+    </form>
+    
+
+  </article>
+</section>
+
+{% endblock %}
+
+
+
+

@@ -4,7 +4,7 @@ from django import forms
 # from django.forms import ModelForm
 from .models import Contact
 
-
+    
 class ContactForm(forms.ModelForm):
 
     class Meta:
@@ -16,3 +16,4 @@ class ContactForm(forms.ModelForm):
     #     'subject': forms.TextInput(attrs={'class': 'form-control'}),
     #     'message': forms.TextInput(attrs={'class': 'form-control'})
     # }
+

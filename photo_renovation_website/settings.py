@@ -53,6 +53,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'photo_renovation_website.urls'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, '')
+MEDIA_URL = 'media/photos/'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -60,6 +63,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.media',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
