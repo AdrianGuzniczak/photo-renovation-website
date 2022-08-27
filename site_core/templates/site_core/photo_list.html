@@ -9,18 +9,29 @@
 <section id="contact">
   <article>
 
-    <h2>List of sended Photos</h2>
-    <ul>
-        {% for photo in photo_list %}
-            <li>
-                {{photo}} 
-                <img id='list_photo' src="{{photo.photo.url}}" alt="" srcset="">
-                <a href="/photo_delete/{{photo.id}}"><input class='form_button' type="submit" value="Delete"></a>
-            </li>
-          </br>
-        {% endfor %}
+    {% if photo_list %}
+
+      <h2>List of sended Photos</h2>
+      <ul>
+          {% for photo in photo_list %}
+              <li>
+                  {{photo}} 
+                  <img id='list_photo' src="{{photo.photo.url}}" alt="" srcset="">
+                  <a href="/photo_delete/{{photo.id}}"><input class='form_button' type="submit" value="Delete"></a>
+              </li>
+            </br>
+      </ul>
+      {% endfor %}
+
+    {% else %}
+
+      <h2>You haven't uploaded any photos yet.</h2>
+
+      <a href="{% url 'site_core:create_photo' %}"><input class='form_button' type="submit" value="Upload a photo for restoration."></a>
+
+    {% endif %}
         
-    </ul>
+    
 
   </article>
 </section>

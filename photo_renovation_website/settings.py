@@ -28,6 +28,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER ='test.photo.renovation.website@gmail.com'
+EMAIL_HOST_PASSWORD = 'ghpm hgor txpn ipyn'
 
 # Application definition
 

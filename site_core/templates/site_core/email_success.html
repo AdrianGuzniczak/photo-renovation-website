@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block my_header %}
+{% endblock %}
+
+{% block content %}
+
+
+<section id="contact">
+  <article>
+
+      <h2>Email has been sent!</h2>
+
+      <a href="{% url 'site_core:contact_form' %}"><input class='form_button' type="submit" value="I have another question."></a>
+    
+  </article>
+</section>
+
+{% endblock %}
+
+

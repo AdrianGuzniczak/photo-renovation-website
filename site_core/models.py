@@ -12,8 +12,6 @@ class Photo(models.Model):
         current_user = request.user
         return current_user.id
 
-    renovation = models.BooleanField(default=False)
-    coloring = models.BooleanField(default=False)
     description = models.CharField(max_length=150, default=None)
     photo = models.ImageField(upload_to='media/photos')
     owner = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
