@@ -4,37 +4,33 @@
 {% endblock %}
 
 {% block content %}
+    <section id="contact">
+        <article>
+            {% if form.errors %}
+                <p> Your username or password is incorrect.</p>
+            {% endif %}
 
+            {% if next %}
+                {% if user.is_authenticated %}
+                    <p>You dont have permission for this page.</p>   
+                {% else %}
+                    <h2>Log in to the website.</h2>
+                {% endif %}
+            {% endif %}
 
-<section id="contact">
-  <article>
-
-    {% if form.errors %}
-    <p> Your username or password is incorrect.</p>
-{% endif %}
-
-{% if next %}
-    {% if user.is_authenticated %}
-        <p>You dont have permission for this page.</p>
-    
-    {% else %}
-        <p>Please login to see this page</p>
-    {% endif %}
-{% endif %}
-
-<form method='post' action='{% url 'login' %}'>
-
-    {% csrf_token %}
-    {{form.as_p}}
-    <input class='form_button' type="submit" value="login">
-    <input type="hidden" name="{{next}}">
-
-</form>
-    
-
-  </article>
-</section>
-
+            <div class='form'>
+                <form method='post' action='{% url 'login' %}'>
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <div class="buttonHolder">
+                        <input class='form_button' type="submit" value="login">
+                    </div>
+                    <input type="hidden" name="{{next}}">
+                </form>
+            </div>
+            <p>You don't have an account? Register <a href=" {% url 'site_core:signup' %} ">here.</a></p>
+        </article>
+    </section>
 {% endblock %}
 
 

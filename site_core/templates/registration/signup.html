@@ -4,22 +4,20 @@
 {% endblock %}
 
 {% block content %}
-
-
-<section id="contact">
-  <article>
-
-    <h2>Register New User Here</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input class='form_button' type="submit" value="Sign Up">
-    </form>
-    
-
-  </article>
-</section>
-
+  <section id="contact">
+    <article>
+      <h2>Register New User Here</h2>
+      <div class='form'>
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <div class="buttonHolder">
+              <input class='form_button' type="submit" value="Sign Up">
+            </div>
+        </form>
+      </div>
+    </article>
+  </section>
 {% endblock %}
 
 

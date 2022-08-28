@@ -4,20 +4,20 @@
 {% endblock %}
 
 {% block content %}
-
-<section id="contact">
-  <article>
-
-    <h2>Are you sure you want to delete this photo?</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input class='form_button' type="submit" value="Delete">
-    </form>
-
-  </article>
-</section>
-
+  <section id="contact">
+    <article>
+      <h2>Are you sure you want to delete this photo?</h2>
+      <div class='form'>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="buttonHolder">
+              <input class='form_button' type="submit" value="Delete">
+            </div>
+        </form>
+      </div>
+    </article>
+  </section>
 {% endblock %}
 
 

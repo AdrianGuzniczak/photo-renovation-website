@@ -3,6 +3,24 @@ body {
   margin: 0px;
 }
 
+div.form
+{
+    display: block;
+    text-align: center;
+}
+
+form
+{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.buttonHolder{ 
+  text-align: center; 
+}
+
 section#contact_home {
   background-color: #85FFBD;
   background-image: linear-gradient(55deg, #3A0075B3 0%, #ececec 50%, #eae4f4 100%);
@@ -103,7 +121,7 @@ section#contact {
 }
 
 #contact p{
-  text-align: left;
+  text-align: center;
 }
 
 .helptext {
@@ -141,7 +159,21 @@ footer p{
   max-width: 100%;
   padding: 0 4px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
 }
+
+.photo_list_col{
+  flex: 25%;
+  max-width: 100%;
+  padding: 0 4px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .column img {
   margin-top: 8px;
   vertical-align: middle;
@@ -162,43 +194,35 @@ p {
 #card1 {
   width: 400px;
   height: 430px;
-  background: url("/static/img/a1.png") no-repeat;
+  background: url("/static/img/a1.jpg") no-repeat;
   background-position: center; 
   object-fit: cover;
   display: inline-block;
   padding: 50px;
-  margin-bottom: 50px;
-  border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
-  box-shadow: 20px 20px rgba(0,0,0,.15);
+
   transition: all 1s ease;
 }
 #card1:hover {
-  background: url("/static/img/a2.png") no-repeat;
+  background: url("/static/img/a2.jpg") no-repeat;
   background-position: center; 
-  border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
-  box-shadow: 10px 10px rgba(0,0,0,.25);
   transform: translate(20px, 20px);
 }
 
 #card2 {
   width: 400px;
   height: 430px;
-  background: url("/static/img/b1.png") no-repeat;
+  background: url("/static/img/b1.jpg") no-repeat;
   background-position: center; 
   object-fit: cover;
   display: inline-block;
   padding: 50px;
-  margin-bottom: 50px;
-  border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
-  box-shadow: 20px 20px rgba(0,0,0,.15);
+
   transition: all 1s ease;
 }
 
 #card2:hover {
-  background: url("/static/img/b2.png") no-repeat;
+  background: url("/static/img/b2.jpg") no-repeat;
   background-position: center; 
-  border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
-  box-shadow: 10px 10px rgba(0,0,0,.25);
   transform: translate(20px, 20px);
 }
 
@@ -210,38 +234,29 @@ p {
   object-fit: cover;
   display: inline-block;
   padding: 50px;
-  margin-bottom: 50px;
-  border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
-  box-shadow: 20px 20px rgba(0,0,0,.15);
+
   transition: all 1s ease;
 }
 #card3:hover {
   background: url("/static/img/c2.jpg") no-repeat;
   background-position: center; 
-  border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
-  box-shadow: 10px 10px rgba(0,0,0,.25);
   transform: translate(20px, 20px);
 }
 
 #card4 {
   width: 400px;
   height: 430px;
-  background: url("/static/img/d1.png") no-repeat;
+  background: url("/static/img/d1.jpg") no-repeat;
   background-position: center; 
   object-fit: cover;
   display: inline-block;
   padding: 50px;
-  margin-bottom: 50px;
-  border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
-  box-shadow: 20px 20px rgba(0,0,0,.15);
   transition: all 1s ease;
 }
 
 #card4:hover {
   background: url("/static/img/d2.jpg") no-repeat;
   background-position: center; 
-  border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
-  box-shadow: 10px 10px rgba(0,0,0,.25);
   transform: translate(20px, 20px);
 }
 
@@ -275,7 +290,7 @@ p {
 
 @media only screen and (max-width: 710px) {
 * {
-  margin: 0;
+  /* margin: 0; */
   padding: 0;
   box-sizing: border-box;
 }
@@ -434,47 +449,19 @@ nav{
   display: none;
 }
 
-#card1 {
-  width: 90%;
-  height: 90%;
-}
-
-#card1:hover{
-  width: 90%;
-  height: 90%;
-}
-
-#card2 {
-  width: 90%;
-  height: 90%;
-}
-
-#card2:hover{
-  width: 90%;
-  height: 90%;
-}
-
-#card3 {
-  width: 90%;
-  height: 90%;
-}
-
-#card3:hover{
-  width: 90%;
-  height: 90%;
-}
-
-#card4 {
-  width: 90%;
-  height: 90%;
-}
-
-#card4:hover{
-  width: 90%;
-  height: 90%;
-}
 
 #h2_gallery{
   display: none;
 }
+
+.photo_list_col{
+  flex: 100%;
+  text-align: center;
+  padding: 8px;
+}
+
+textarea#id_message{
+  max-width: 145px;
+}
+
 }

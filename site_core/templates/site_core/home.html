@@ -1,44 +1,37 @@
 {% extends 'base.html' %}
 
 {% block content %}
+  <section id="home">
+    <article>
+      <h2>Photo renowation website</h2>
 
-<section id="home">
-  <article>
+      <p>Do you have photos that have been damaged? Our website allows you to restore photos.</p>
+      <p>Scratches, gratings are no longer a problem.  Restore your photos to their former glory.</p>
+    </article>
+  </section>
 
-    <h2>Photo renowation website</h2>
-
-    <p>Do you have photos that have been damaged? Our website allows you to restore photos.</p>
-    <p>Scratches, gratings are no longer a problem.  Restore your photos to their former glory.</p>
-
-  </article>
-</section>
-
-<section id="gallery">
-  <article id="article_gallery">
-    <h2 id='h2_gallery'>Gallery</h2>
-
-    <div class="row">
-      <div class="column">
-        <div id='card1'></div>
-        <div id='card2'></div>
+  <section id="gallery">
+    <article id="article_gallery">
+      <h2 id='h2_gallery'>Gallery</h2>
+      <div class="row">
+        <div class="column">
+          <div id='card1'></div>
+          <div id='card2'></div>
+        </div>
+        <div class="column">
+          <div id='card3'></div>
+          <div id='card4'></div>
+        </div>
       </div>
-      <div class="column">
-        <div id='card3'></div>
-        <div id='card4'></div>
-      </div>
-    </div>
+    </article>
+  </section>  
 
-  </article>
-</section>  
-
-<section id="contact_home">
-  <article>
-    <h2>Contact</h2>
-    <p>Contact us using the form below. We will certainly dispel all your doubts.</p>
-
-    <a href="{% url 'site_core:contact_form' %}"><h3 class='form_button'>Click here to contact!</h3></a>
-
-  </article>
-</section>
+  <section id="contact_home">
+    <article>
+      <h2>Contact</h2>
+      <p>Contact us using the form below. We will certainly dispel all your doubts.</p>
+      <a href="{% url 'site_core:contact_form' %}"><h3 class='form_button'>Click here to contact!</h3></a>
+    </article>
+  </section>
 
 {% endblock %}

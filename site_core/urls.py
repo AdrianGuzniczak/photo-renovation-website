@@ -1,9 +1,9 @@
-from xml.etree.ElementInclude import include
 from django.urls import path
-from site_core.views import HomeView, PhotoCreateView, PhotoListView, SignUpView, ContactView, PhotoDeleteView
-from site_core import views
 from django.conf.urls.static import static
 from django.conf import settings
+from site_core import views
+from site_core.views import HomeView, PhotoCreateView, PhotoListView, \
+    SignUpView, ContactView, PhotoDeleteView
 
 app_name = 'site_core'
 
@@ -15,5 +15,7 @@ urlpatterns = [
     path('contact_form/', ContactView.as_view(), name = 'contact_form'),
     path('gallery/', views.gallery, name='gallery'),
     path('email_success/', views.email_success, name = 'email_success'),
-    path('photo_delete/<int:pk>', PhotoDeleteView.as_view())
+    path('photo_delete/<int:pk>', PhotoDeleteView.as_view()),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'site_core.views.view_404'

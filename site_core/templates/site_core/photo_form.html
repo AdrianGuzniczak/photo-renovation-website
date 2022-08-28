@@ -4,22 +4,20 @@
 {% endblock %}
 
 {% block content %}
-
-
-<section id="contact">
-  <article>
-
-    <h2>Upload a photo for restoration.</h2>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input class='form_button' type="submit" value="Submit!">
-    </form>
-    
-
-  </article>
-</section>
-
+  <section id="contact">
+    <article>
+      <h2>Upload a photo for restoration.</h2>
+      <div class='form'>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="buttonHolder">
+              <input class='form_button' type="submit" value="Submit!">
+            </div>
+        </form>
+      </div>
+    </article>
+  </section>
 {% endblock %}
 
 

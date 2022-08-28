@@ -4,20 +4,33 @@
 {% endblock %}
 
 {% block content %}
-
-
-<section id="contact">
-  <article>
-
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input class='form_button' type="submit" value="Submit!">
-    </form>
-
-  </article>
-</section>
-
+  <section id="contact">
+    <article>
+      <h2>Write to us!</h2>
+      <div class='form'>
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <table style = 'font-family: Arial, Helvetica, sans-serif; font-size: 1.5em; color: #084012;'>
+            <tr>
+              <td>Subject: </td>
+              <td>{{ form.subject }}</td>
+            </tr>
+            <tr>
+              <td>Email: </td>
+              <td>{{ form.email }}</td>
+            </tr>
+            <tr>
+              <td>Message: </td>
+              <td>{{ form.message }}</td>
+            </tr>
+          </table>
+          <div class="buttonHolder">
+            <input class='form_button' type="submit" value="Submit!">
+          </div>
+        </form>
+      </div>
+    </article>
+  </section>
 {% endblock %}
 
 

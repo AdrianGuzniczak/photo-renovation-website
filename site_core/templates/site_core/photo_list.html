@@ -4,38 +4,28 @@
 {% endblock %}
 
 {% block content %}
-
-
-<section id="contact">
-  <article>
-
-    {% if photo_list %}
-
-      <h2>List of sended Photos</h2>
-      <ul>
+  <section id="contact">
+    <article>
+      {% if photo_list %}
+        <h2>List of sended Photos</h2>
+        <hr>
           {% for photo in photo_list %}
-              <li>
-                  {{photo}} 
-                  <img id='list_photo' src="{{photo.photo.url}}" alt="" srcset="">
-                  <a href="/photo_delete/{{photo.id}}"><input class='form_button' type="submit" value="Delete"></a>
-              </li>
-            </br>
-      </ul>
-      {% endfor %}
-
-    {% else %}
-
-      <h2>You haven't uploaded any photos yet.</h2>
-
-      <a href="{% url 'site_core:create_photo' %}"><input class='form_button' type="submit" value="Upload a photo for restoration."></a>
-
-    {% endif %}
-        
-    
-
-  </article>
-</section>
-
+            <div class="row">
+              <div class="photo_list_col">{{photo}}</div>
+              <div class="photo_list_col"><img id='list_photo' src="{{photo.photo.url}}"></div>
+              <div class="photo_list_col"><a href="/photo_delete/{{photo.id}}"><input class='form_button' type="submit" value="Delete"></a></div>
+            </div> 
+            <hr></br>
+          {% endfor %}
+        <p>After completing the renovation process, photos will be sent to the email address <strong>{{user.email}}</strong></p>
+      {% else %}
+        <h2>You haven't uploaded any photos yet.</h2>
+        <div class="buttonHolder">
+          <a href="{% url 'site_core:create_photo' %}"><input class='form_button' type="submit" value="Upload a photo for restoration."></a>
+        </div>
+      {% endif %} 
+    </article>
+  </section>
 {% endblock %}
 
 
