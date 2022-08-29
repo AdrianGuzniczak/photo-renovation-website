@@ -3,7 +3,7 @@ body {
   margin: 0px;
 }
 
-div.form
+.form
 {
     display: block;
     text-align: center;
@@ -21,7 +21,7 @@ form
   text-align: center; 
 }
 
-section#contact_home {
+#contact_home {
   background-color: #85FFBD;
   background-image: linear-gradient(55deg, #3A0075B3 0%, #ececec 50%, #eae4f4 100%);
   color: #084012;
@@ -101,19 +101,19 @@ header {
   margin-top: 0;
 }
 
-section#home {
+#home {
   background: rgb(123,211,232);
   background: linear-gradient(135deg, white 0%, rgba(232, 232, 232) 50%, #391E46 100%);
   color: #0f2852;
 }
 
-section#gallery {
+#gallery {
   background: rgb(123,211,232);
   background: linear-gradient(135deg, rgba(40, 40, 44, 0.595) 0%, rgb(123, 117, 117) 20%, white 100%);
   color: #40081a;
 }
 
-section#contact {
+#contact {
   background-color: #85FFBD;
   background-image: linear-gradient(55deg, #3A0075B3 0%, #ececec 50%, #eae4f4 100%);
   color: #084012;
@@ -182,7 +182,7 @@ footer p{
 
 h2 {
   text-align: center;
-  padding: 40px 0px 0px 0px;
+  padding: 40px 0 0 0;
   font-size: 3em;
 }
 
@@ -362,7 +362,6 @@ nav{
 }
 
 .nav-container .hamburger-lines {
-  display: block;
   height: 26px;
   width: 32px;
   position: absolute;
@@ -392,7 +391,7 @@ nav{
 }
 
 .nav-container .hamburger-lines .line3 {
-  transform-origin: 0% 100%;
+  transform-origin: 0 100%;
   transition: transform 0.4s ease-in-out;
 }
 
@@ -460,8 +459,7 @@ nav{
   padding: 8px;
 }
 
-textarea#id_message{
+#id_message{
   max-width: 145px;
 }
-
 }

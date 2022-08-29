@@ -55,4 +55,4 @@ def email_success(request):
     return render(request, "site_core/email_success.html")
 
 def view_404(request, exception=None):
-    return redirect('site_core/home')
+    return redirect('site_core:home')
