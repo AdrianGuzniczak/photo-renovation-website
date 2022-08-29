@@ -18,4 +18,4 @@ Website allows users to:
 
 ### Project in a nutshell
 
-![til](site_core/static/img/photo_renovation_website_GIF.gif)
+![til](./site_core/static/img/photo_renovation_website_GIF.gif)
